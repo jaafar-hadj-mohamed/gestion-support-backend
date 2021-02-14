@@ -64,14 +64,16 @@ public class Demande  /*implements Serializable*/{
 	private Instant createdDate;*/
 	
 	
-	/*
-	@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	
+	/*@ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "problem_id", nullable = true)
     @JsonIgnore
     private Problem problem;*/
 	
-	
-	public Demande() {
+	/*@OneToMany (mappedBy="demande")
+	private List<Reponse> reponse;*/
+	 
+	/*public Demande() {
 		
 	}
 	
@@ -85,7 +87,7 @@ public class Demande  /*implements Serializable*/{
 		this.problem = problem;
 		this.createdAt = createdAt;
 		
-	}
+	}*/
 
 
 	public long getId() {

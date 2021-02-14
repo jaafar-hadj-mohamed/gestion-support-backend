@@ -44,8 +44,8 @@ public class EmailService {
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(email.getEmail());
         mail.setFrom("noreply@baeldung.com");
-        mail.setSubject("Contacto: "+email.getNombre());
-        mail.setText("Bonjour"+email.getId()+"l'equipe proged a bien recu votre demande nous vous repondrons dans mois de 48h. Votre demande est:  -"+email.getMensaje());
+        mail.setSubject("🔥 ✅ Demande bien recu");
+        mail.setText("Bonjour "+email.getNom()+" "+email.getPrenom()+", \nL'equipe PROGED a bien recu votre demande nous vous répondrons dans mois de 48h 🕐. \n\nVotre demande est: \n -"+email.getMensaje());
          
         javaMailSender.send(mail);
     }

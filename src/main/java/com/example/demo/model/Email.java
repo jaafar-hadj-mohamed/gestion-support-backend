@@ -18,6 +18,10 @@ public class Email {
 	private int nombre;
 	@Column(name="email")
 	private String email;
+	@Column(name="nom")
+	private String nom;
+	@Column(name="prenom")
+	private String prenom;
 	@Column(name="mensaje")
 	private String mensaje;
 	
@@ -28,10 +32,12 @@ public class Email {
 	
 
 
-	public Email(int nombre, String email, String mensaje) {
+	public Email(int nombre, String email, String nom,String prenom,String mensaje) {
 		super();
 		this.nombre = nombre;
 		this.email = email;
+		this.email = nom;
+		this.email = prenom;
 		this.mensaje = mensaje;
 	}
 
@@ -64,6 +70,22 @@ public class Email {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
 

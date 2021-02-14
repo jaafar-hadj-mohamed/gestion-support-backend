@@ -30,12 +30,12 @@ public class ProblemController {
 		public List<Problem>getAllProblemes(){
 			return problemRepository.findAll();}
 		
-	/*@GetMapping("/problemes/{id}")
+	@GetMapping("/problemes/{id}")
     public Problem getProblemByID(@PathVariable Long id) {
     	Optional<Problem> optProblem = problemRepository.findById(id);
     	
     		return optProblem.get();
-    	}*/
+    	}
     	
 	//create employee rest api
 		@PostMapping("/problemes")
