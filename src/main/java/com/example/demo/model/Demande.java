@@ -56,6 +56,10 @@ public class Demande  /*implements Serializable*/{
 	private String description;
 	@Column(name="problem")
 	private String problem;
+	@Column(name="etat")
+	private String etat="Nouveau";
+	@Column(name="priorite")
+	private String priorite="Normale";
 	@Basic(optional = false)
 	@CreationTimestamp
 	@Column(name = "created_at")
@@ -113,7 +117,8 @@ public class Demande  /*implements Serializable*/{
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
+	
+	
 	public String getEmail() {
 		return email;
 	}
@@ -137,6 +142,22 @@ public class Demande  /*implements Serializable*/{
 	public void setProblem(String problem) {
 		this.problem = problem;
 	}
+	
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+	public String getPriorite() {
+		return priorite;
+	}
+
+	public void setPriorite(String priorite) {
+		this.priorite = priorite;
+	}
+
 
 	public Date getCreatedAt() {
 		return createdAt;

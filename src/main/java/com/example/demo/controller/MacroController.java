@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.model.Demande;
 import com.example.demo.model.Faq;
 import com.example.demo.model.Macro;
 import com.example.demo.repository.MacroRepository;
@@ -39,6 +40,13 @@ public class MacroController {
 		return macroRepository.save(macro);
 	}
 	
+	//get macro by id rest api
+			@GetMapping("/macros/{id}")
+			public ResponseEntity<Macro>getMacroByTd(@PathVariable Long id){
+				Macro macro=macroRepository.findById(id)
+						.orElseThrow(()->new ResourceNotFoundException("Macro not exist with id:"+id));
+				return ResponseEntity.ok(macro);
+			}
 	
 	//update faq rest api
 			@PutMapping("/macros/{id}")
