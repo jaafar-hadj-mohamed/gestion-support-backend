@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.exception.ResourceNotFoundException;
 
 import com.example.demo.model.Faq;
-
+import com.example.demo.model.Macro;
 import com.example.demo.repository.FaqRepository;
 
 @RestController
@@ -35,6 +35,13 @@ public class FaqController {
 	@GetMapping("/faqs")
 	public List<Faq>getAllFaqs(){
 		return faqRepository.findAll();
+	}
+	//get faq by id rest api
+	@GetMapping("/faqs/{id}")
+	public ResponseEntity<Faq>getFaqByTd(@PathVariable Long id){
+		Faq faq=faqRepository.findById(id)
+				.orElseThrow(()->new ResourceNotFoundException("Faq not exist with id:"+id));
+		return ResponseEntity.ok(faq);
 	}
 	
 	@PostMapping("/faqs")
